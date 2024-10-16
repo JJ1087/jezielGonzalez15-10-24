@@ -8,16 +8,16 @@ jobs:
       - name: Mensaje
       - name: Touch File
         run: |
-             touch hola.txt
-             ls -al
+          touch hola.txt
+          ls -al
       - name: Set test
         run: |
-             echo "Hola mundo" >> hola.txt
-             ls -al
+          echo "Hola mundo" >> hola.txt
+          ls -al
       - name: Read File
         run: |
-             cat hola.txt
-             ls -al
+          cat hola.txt
+          ls -al
   dos:
     runs-on: ubuntu-latest
     needs: [uno]
