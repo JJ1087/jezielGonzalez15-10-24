@@ -1,13 +1,13 @@
-name:  PWA CI/CD Workflow
+name: PWA CI/CD Workflow
 
-# Disparadores para el workflow ..
+# Disparadores para el workflow
 on:
   push:
     branches:
-      - master    # Ejecutar las pruebas en cualquier rama en cada push
+      - '*'    # Ejecutar las pruebas en cualquier rama en cada push
   pull_request:
     branches:
-      - master   # Ejecutar las pruebas antes de fusionar a main
+      - master   # Ejecutar las pruebas antes de fusionar a master
 
   workflow_dispatch:
 
@@ -51,10 +51,24 @@ jobs:
           name: coverage-report
           path: coverage/ # Ajusta esta ruta si tu informe de cobertura se genera en un lugar diferente
   
-  #Comentario de pruebas para depoy vercel
-        
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: test   # Asegura que este job solo se ejecuta si 'test' ha sido exitoso
+    if: github.ref == 'refs/heads/master'  # Asegura que solo se ejecute en la rama master
 
-      
+    steps:
+      # 1. Checkout del repositorio
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      
+      # 2. Vincular o crear el proyecto de Vercel (si no está vinculado ya)
+      #- name: Link or Create Vercel Project
+        #run: npx vercel link --token VZOjjhVRJ3UV6IAxufrWngeX --yes
+        # Aquí no necesitas especificar el nombre del proyecto. Vercel lo detectará automáticamente.
 
+      # 3. Desplegar la aplicación a producción
+      - name: Deploy to Production Vercel
+        run: |
+          echo "Desplegando aplicación a producción..."
+          npx vercel --prod --token ${{ secrets.TOKEN_VERCEL }}
