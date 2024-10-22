@@ -44,5 +44,12 @@ jobs:
       - name: Run Jest tests
         run: npm run test -- --ci --watchAll=false --coverage
 
+      # 6. Almacenar el informe de cobertura (siempre)
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage/ # Ajusta esta ruta si tu informe de cobertura se genera en un lugar diferente
+
       
 
