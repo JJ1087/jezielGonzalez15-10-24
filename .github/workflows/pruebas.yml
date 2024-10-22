@@ -9,7 +9,7 @@ on:
     branches:
       - main   # Ejecutar las pruebas antes de fusionar a main
 
-  workflow_dispach:
+  workflow_dispatch:
 
 # Permisos para GitHub Actions
 permissions:
