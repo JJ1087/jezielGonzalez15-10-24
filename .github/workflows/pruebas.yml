@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # 4. Compilar el proyecto Angular (ng build)
+      - name: Build Angular Project
+        run: npm run build --if-present
 
       
 
