@@ -7,7 +7,7 @@ on:
       - '*'    # Ejecutar las pruebas en cualquier rama en cada push
   pull_request:
     branches:
-      - main   # Ejecutar las pruebas antes de fusionar a main
+      - master   # Ejecutar las pruebas antes de fusionar a main
 
   workflow_dispatch:
 
