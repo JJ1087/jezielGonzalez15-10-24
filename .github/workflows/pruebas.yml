@@ -42,7 +42,7 @@ jobs:
 
       # 5. Ejecutar pruebas unitarias con Jest
       - name: Run Jest tests
-        run: npm run test -- --ci --watchAll=false
+        run: npm run test -- --ci --watchAll=false --coverage
 
       
 
