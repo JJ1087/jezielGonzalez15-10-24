@@ -63,7 +63,7 @@ jobs:
 
       # 2. Vincular el proyecto de Vercel (si no está vinculado ya)
       - name: Link Vercel Project
-        run: npx vercel link --token VZOjjhVRJ3UV6IAxufrWngeX
+        run: npx vercel link --token VZOjjhVRJ3UV6IAxufrWngeX --yes
        # Este paso solo es necesario si el proyecto no está vinculado con Vercel aún.
 
       # 3. Desplegar la aplicación a producción
