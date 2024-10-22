@@ -61,16 +61,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Iniciar sesión en Vercel (asegúrate de tener Vercel CLI configurado)
-      - name: Vercel Login
-        run: npx vercel login --token VZOjjhVRJ3UV6IAxufrWngeX
-
-      # 3. Vincular el proyecto de Vercel (solo es necesario la primera vez)
-      - name: Vercel Link
+      # 2. Vincular el proyecto de Vercel (si no está vinculado ya)
+      - name: Link Vercel Project
         run: npx vercel link --token VZOjjhVRJ3UV6IAxufrWngeX
+       # Este paso solo es necesario si el proyecto no está vinculado con Vercel aún.
 
-      # 4. Desplegar aplicación en Vercel
-      - name: Deploy to production Vercel
+      # 3. Desplegar la aplicación a producción
+      - name: Deploy to Production Vercel
         run: |
           echo "Desplegando aplicación a producción..."
           npx vercel --prod --token VZOjjhVRJ3UV6IAxufrWngeX
