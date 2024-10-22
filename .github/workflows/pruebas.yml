@@ -50,6 +50,22 @@ jobs:
         with:
           name: coverage-report
           path: coverage/ # Ajusta esta ruta si tu informe de cobertura se genera en un lugar diferente
+  
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: test   # Asegura que este job solo se ejecuta si 'test' ha sido exitoso
+
+    steps:
+      # 1. Checkout del repositorio
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Desplegar aplicación (modifica este paso según cómo hagas el despliegue)
+      - name: Deploy to production
+        run: |
+          # Aquí va el comando para el despliegue, dependiendo de cómo despliegues tu aplicación.
+          echo "Desplegando aplicación a producción..."
 
       
 
