@@ -63,14 +63,14 @@ jobs:
 
       # 2. Vincular o crear el proyecto de Vercel (si no está vinculado ya)
       - name: Link or Create Vercel Project
-        run: npx vercel link --token VZOjjhVRJ3UV6IAxufrWngeX --yes --project quickdinehub-webv
-        # Sustituye 'nombre-proyecto-correcto' por el nombre real que quieras para tu proyecto.
+        run: npx vercel link --token VZOjjhVRJ3UV6IAxufrWngeX --yes
+        # Aquí no necesitas especificar el nombre del proyecto. Vercel lo detectará automáticamente.
 
       # 3. Desplegar la aplicación a producción
       - name: Deploy to Production Vercel
         run: |
           echo "Desplegando aplicación a producción..."
-          npx vercel --prod --token VZOjjhVRJ3UV6IAxufrWngeX --project quickdinehub
+          npx vercel --prod --token VZOjjhVRJ3UV6IAxufrWngeX
         
 
       
