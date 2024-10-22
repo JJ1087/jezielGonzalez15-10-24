@@ -67,10 +67,10 @@ jobs:
         # Aquí no necesitas especificar el nombre del proyecto. Vercel lo detectará automáticamente.
 
       # 3. Desplegar la aplicación a producción
-      #- name: Deploy to Production Vercel
-        #run: |
-          #echo "Desplegando aplicación a producción..."
-          #npx vercel --prod --token VZOjjhVRJ3UV6IAxufrWngeX --confirm
+      - name: Deploy to Production Vercel
+        run: |
+          echo "Desplegando aplicación a producción..."
+          npx vercel --prod --token VZOjjhVRJ3UV6IAxufrWngeX 
         
 
       
