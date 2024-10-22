@@ -72,3 +72,5 @@ jobs:
         run: |
           echo "Desplegando aplicación a producción..."
           npx vercel --prod --token ${{ secrets.TOKEN_VERCEL }}
+
+ # 3. Visualizacion de depliegue
